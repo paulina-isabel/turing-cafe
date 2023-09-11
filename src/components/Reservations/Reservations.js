@@ -1,4 +1,4 @@
-import './Reservations.css'
+import './Reservations.css';
 import ReservationCard from "../ReservationCard/ReservationCard";
 
 const Reservations = ({ reservations }) => {

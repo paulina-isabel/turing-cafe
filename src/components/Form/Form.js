@@ -6,13 +6,13 @@ const Form = ({ addReservation }) => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  const [guestNumber, setGuestNumber] = useState('');
+  const [number, setNumber] = useState('');
 
   const clearInputs = () => {
     setName('')
     setDate('')
     setTime('')
-    setGuestNumber('')
+    setNumber('')
   };
 
   const handleSubmit = (e) => {
@@ -22,10 +22,12 @@ const Form = ({ addReservation }) => {
       name,
       date,
       time,
-      guestNumber
+      number
     };
     addReservation(newReservation);
+    console.log(newReservation, 'this is new res')
     clearInputs();
+    console.log("Form submitted")
   };
 
   return (
@@ -62,13 +64,13 @@ const Form = ({ addReservation }) => {
           
           <input
             type="text"
-            id="guestNumber"
+            id="number"
             placeholder='Number of Guests'
-            value={guestNumber}
+            value={number}
             onChange={(e) => {
-              setGuestNumber(e.target.value)
+              setNumber(e.target.value)
               console.log(e.target.value, 'target value')
-              console.log(guestNumber, 'guestNumber after setting')
+              console.log(number, 'guestNumber after setting')
             }}
             required
           />
