@@ -1,22 +1,35 @@
 import React, { useState } from 'react';
 import './Form.css'
 
-const Form = () => {
+const Form = ({ addReservation }) => {
 
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [guestNumber, setGuestNumber] = useState('')
 
+  const clearInputs = () => {
+    setName('')
+    setDate('')
+    setTime('')
+    setGuestNumber('')
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newReservation = {
+      id: Date.now(),
+      name,
+      date,
+      time,
+      guestNumber
+    }
+    addReservation(newReservation)
+    clearInputs()
   }
 
   return (
     <div>
-      This is a form
-      We need Name, Date(mm/dd), Time, and Number of Guests
-      Then a sbumission button - "Make a reservation"
       <h1>Make a New Reservation</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -32,7 +45,7 @@ const Form = () => {
         <div>
           <label htmlFor="date">Date:</label>
           <input
-            type="date"
+            type="text"
             id="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -42,7 +55,7 @@ const Form = () => {
         <div>
           <label htmlFor="time">Time:</label>
           <input
-            type="time"
+            type="text"
             id="time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
@@ -52,7 +65,7 @@ const Form = () => {
         <div>
           <label htmlFor="guestNumber">Number of Guests:</label>
           <input
-            type="guestNumber"
+            type="text"
             id="guestNumber"
             value={guestNumber}
             onChange={(e) => setGuestNumber(e.target.value)}
@@ -60,7 +73,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit">Make Reservation</button>
         </div>
       </form>
     </div>

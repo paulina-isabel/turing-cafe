@@ -6,13 +6,11 @@ import Form from '../Form/Form';
 import Reservations from '../Reservations/Reservations';
 
 function App() {
-
   const [reservations, setReservations] = useState([])
 
-  // useEffect(() => {
-  //   const reservations = getData()
-  //   console.log(reservations, 'this is data')
-  // }, []);
+  const addReservation = (newReservation) => {
+    setReservations([...reservations, newReservation])
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -24,20 +22,18 @@ function App() {
         console.error('Error fetching data:', error)
       }
     }
-    
     fetchData()
   }, [])
   
   console.log(reservations, 'this is reservations')
+  
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
-        <Form />
+        <Form addReservation={addReservation}/>
       </div>
-      <div className='resy-container'>
-        <Reservations reservations={reservations}/>
-      </div>
+      <Reservations reservations={reservations}/>
     </div>
   );
 }
