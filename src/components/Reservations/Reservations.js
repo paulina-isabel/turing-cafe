@@ -1,4 +1,4 @@
-import ReservationCard from "../ReservationCard/ReservationCard"
+import ReservationCard from "../ReservationCard/ReservationCard";
 
 const Reservations = ({ reservations }) => {
 
@@ -13,13 +13,13 @@ const Reservations = ({ reservations }) => {
         time={reservation.time}
         guestNumber={reservation.number}
       />
-  })
+  });
 
   return (
     <div className='resy-container'>
       {reservationCards}
     </div>
-  )
-}
+  );
+};
 
-export default Reservations
+export default Reservations;

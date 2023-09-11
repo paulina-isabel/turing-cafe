@@ -6,11 +6,11 @@ import Form from '../Form/Form';
 import Reservations from '../Reservations/Reservations';
 
 function App() {
-  const [reservations, setReservations] = useState([])
+  const [reservations, setReservations] = useState([]);
 
   const addReservation = (newReservation) => {
-    setReservations([...reservations, newReservation])
-  }
+    setReservations([...reservations, newReservation]);
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -23,19 +23,17 @@ function App() {
       }
     }
     fetchData()
-  }, [])
+  }, []);
   
   console.log(reservations, 'this is reservations')
-  
+
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
-      <div className='resy-form'>
-        <Form addReservation={addReservation}/>
-      </div>
+      <Form addReservation={addReservation}/>
       <Reservations reservations={reservations}/>
     </div>
   );
-}
+};
 
 export default App; 

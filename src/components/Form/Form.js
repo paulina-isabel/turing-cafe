@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import './Form.css'
+import './Form.css';
 
 const Form = ({ addReservation }) => {
 
-  const [name, setName] = useState('')
-  const [date, setDate] = useState('')
-  const [time, setTime] = useState('')
-  const [guestNumber, setGuestNumber] = useState('')
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [guestNumber, setGuestNumber] = useState('');
 
   const clearInputs = () => {
     setName('')
     setDate('')
     setTime('')
     setGuestNumber('')
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,14 +23,13 @@ const Form = ({ addReservation }) => {
       date,
       time,
       guestNumber
-    }
-    addReservation(newReservation)
-    clearInputs()
-  }
+    };
+    addReservation(newReservation);
+    clearInputs();
+  };
 
   return (
-    <div>
-      <h1>Make a New Reservation</h1>
+    <div className='resy-form'>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -41,8 +40,7 @@ const Form = ({ addReservation }) => {
             onChange={(e) => setName(e.target.value)}
             required
           />
-        </div>
-        <div>
+
           <label htmlFor="date">Date:</label>
           <input
             type="text"
@@ -51,8 +49,7 @@ const Form = ({ addReservation }) => {
             onChange={(e) => setDate(e.target.value)}
             required
           />
-        </div>
-        <div>
+
           <label htmlFor="time">Time:</label>
           <input
             type="text"
@@ -61,8 +58,7 @@ const Form = ({ addReservation }) => {
             onChange={(e) => setTime(e.target.value)}
             required
           />
-        </div>
-        <div>
+
           <label htmlFor="guestNumber">Number of Guests:</label>
           <input
             type="text"
@@ -71,13 +67,12 @@ const Form = ({ addReservation }) => {
             onChange={(e) => setGuestNumber(e.target.value)}
             required
           />
-        </div>
-        <div>
+
           <button type="submit">Make Reservation</button>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

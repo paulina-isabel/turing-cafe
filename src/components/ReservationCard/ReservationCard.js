@@ -1,5 +1,4 @@
-import './ReservationCard.css'
-
+import './ReservationCard.css';
 
 const ReservationCard = ({ name, date, time, guestNumber }) => {
   return (
@@ -10,7 +9,7 @@ const ReservationCard = ({ name, date, time, guestNumber }) => {
       <p>Number of Guests: {guestNumber}</p>
       <button>Cancel</button>
     </div>
-  )
-}
+  );
+};
 
-export default ReservationCard
+export default ReservationCard;
