@@ -65,7 +65,11 @@ const Form = ({ addReservation }) => {
             id="guestNumber"
             placeholder='Number of Guests'
             value={guestNumber}
-            onChange={(e) => setGuestNumber(e.target.value)}
+            onChange={(e) => {
+              setGuestNumber(e.target.value)
+              console.log(e.target.value, 'target value')
+              console.log(guestNumber, 'guestNumber after setting')
+            }}
             required
           />
 
