@@ -32,37 +32,38 @@ const Form = ({ addReservation }) => {
     <div className='resy-form'>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
+
           <input
             type="text"
             id="name"
+            placeholder='Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
 
-          <label htmlFor="date">Date:</label>
           <input
             type="text"
-            id="date"
+            id="Date"
+            placeholder='Date (mm/dd)'
             value={date}
             onChange={(e) => setDate(e.target.value)}
             required
           />
 
-          <label htmlFor="time">Time:</label>
           <input
             type="text"
             id="time"
+            placeholder='Time'
             value={time}
             onChange={(e) => setTime(e.target.value)}
             required
           />
-
-          <label htmlFor="guestNumber">Number of Guests:</label>
+          
           <input
             type="text"
             id="guestNumber"
+            placeholder='Number of Guests'
             value={guestNumber}
             onChange={(e) => setGuestNumber(e.target.value)}
             required

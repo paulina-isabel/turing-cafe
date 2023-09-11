@@ -1,9 +1,7 @@
+import './Reservations.css'
 import ReservationCard from "../ReservationCard/ReservationCard";
 
 const Reservations = ({ reservations }) => {
-
-  console.log(reservations, 'reservations in Reservations component')
-
   const reservationCards = reservations.map((reservation) => {
     return <ReservationCard 
         id={reservation.id}
