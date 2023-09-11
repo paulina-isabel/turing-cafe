@@ -25,9 +25,7 @@ const Form = ({ addReservation }) => {
       number
     };
     addReservation(newReservation);
-    console.log(newReservation, 'this is new res')
     clearInputs();
-    console.log("Form submitted")
   };
 
   return (
@@ -69,8 +67,6 @@ const Form = ({ addReservation }) => {
             value={number}
             onChange={(e) => {
               setNumber(e.target.value)
-              console.log(e.target.value, 'target value')
-              console.log(number, 'guestNumber after setting')
             }}
             required
           />

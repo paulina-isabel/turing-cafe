@@ -17,15 +17,12 @@ function App() {
       try {
         const data = await getData()
         setReservations(data)
-        console.log(data, 'this is data')
       } catch (error) {
         console.error('Error fetching data:', error)
       }
     }
     fetchData()
   }, []);
-  
-  console.log(reservations, 'this is reservations')
 
   return (
     <div className="App">
